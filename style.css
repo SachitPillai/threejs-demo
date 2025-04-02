@@ -1,0 +1,86 @@
+/* ==== Base Layout & Animated Gradient Background ==== */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(270deg, #0d1117, #1a1d27, #0d1117);
+    background-size: 600% 600%;
+    animation: backgroundAnimation 20s ease infinite;
+    color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    transition: background-color 1.2s ease;
+  }
+  
+  @keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* ==== 3D Canvas ==== */
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  /* ==== Overlay UI ==== */
+  .overlay {
+    pointer-events: none;
+  }
+  
+  /* ==== Scroll Trigger Area (optional) ==== */
+  .scroll-trigger {
+    /* Height is set inline in HTML (150vh in this example) */
+  }
+  
+  /* ==== Landing Page Styles ==== */
+  .landing-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Matching the animated gradient background */
+    background: linear-gradient(270deg, #0d1117, #1a1d27, #0d1117);
+    background-size: 600% 600%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+    z-index: 30;
+  }
+  .landing-page.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* ==== Additional Futuristic Styles (if desired) ==== */
+  /* You can add custom classes here for extra effects */
+  .glitch {
+    position: relative;
+    animation: glitch 1s infinite;
+  }
+  
+  @keyframes glitch {
+    0% { text-shadow: 2px 2px 0 #00ffe7, -2px -2px 0 #0077ff; }
+    20% { text-shadow: -2px 2px 0 #00ffe7, 2px -2px 0 #0077ff; }
+    40% { text-shadow: 2px -2px 0 #00ffe7, -2px 2px 0 #0077ff; }
+    60% { text-shadow: -2px -2px 0 #00ffe7, 2px 2px 0 #0077ff; }
+    80% { text-shadow: 2px 2px 0 #00ffe7, -2px -2px 0 #0077ff; }
+    100% { text-shadow: -2px -2px 0 #00ffe7, 2px 2px 0 #0077ff; }
+  }
+  
+  .futuristic:hover {
+    text-shadow: 0 0 20px rgba(0, 255, 231, 1), 0 0 40px rgba(0, 119, 255, 1);
+    transform: scale(1.02);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+  }
+  
